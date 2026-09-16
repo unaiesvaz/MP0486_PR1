@@ -9,6 +9,6 @@ public class PR110ReadFile {
 
     // Funció que llegeix el fitxer i mostra les línies amb numeració
     public static void llegirIMostrarFitxer(String camiFitxer) {
-        
+        System.out.println("Hola!");
     }
 }
