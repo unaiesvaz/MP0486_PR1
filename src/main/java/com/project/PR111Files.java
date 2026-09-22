@@ -39,7 +39,7 @@ public class PR111Files {
 
 
         } catch (IOException e) {
-            System.out.println("No se pudo crear el directorio");
+            System.out.println("Error al gestionar los archivos");
         }
     }
 }
