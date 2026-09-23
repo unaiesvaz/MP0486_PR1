@@ -11,6 +11,7 @@ public class PR113sobreescriu {
     }
 
     // Mètode que escriu les frases sobreescrivint el fitxer amb UTF-8; cada línia acaba amb un salt de línia
-    public static void escriureFrases(String camiFitxer) {
+    public static void escriureFrases(String camiFitxer) { // Este metodo sobreescribe 
+        
     }
 }

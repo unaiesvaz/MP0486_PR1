@@ -1,5 +1,13 @@
 package com.project;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+
 public class PR113append {
 
     public static void main(String[] args) {
@@ -10,7 +18,15 @@ public class PR113append {
         afegirFrases(camiFitxer);
     }
 
-    // Mètode que afegeix les frases al final del fitxer amb UTF-8; cada línia acaba amb un salt de línia
-    public static void afegirFrases(String camiFitxer) {
+    public static void afegirFrases(String camiFitxer) { // Este metodo escribe sin borrar, agrega
+        try (PrintWriter pw = new PrintWriter(
+            new OutputStreamWriter(new FileOutputStream("fitxer.txt"), StandardCharsets.UTF_8))) {
+            pw.println("Primera línia");   // println() afegeix el salt de línia
+            pw.println("Segona línia");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
