@@ -1,6 +1,5 @@
 package com.project;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -29,6 +28,9 @@ public class PR112cat {
         if (Files.isRegularFile(ruta)) { // En el caso de que sea un fichero
             try {
                 List<String> linies = Files.readAllLines(ruta, StandardCharsets.UTF_8);
+                for (String linea : linies) {
+                    System.out.println(linea);
+                }
                 
 
             } catch (IOException e) {
@@ -36,10 +38,10 @@ public class PR112cat {
             }
 
 
-        } else if (Files.isDirectory(ruta)) { // Caso de que sea un directorio
-            System.out.println("La ruta especificada conduce a un directorio");
+        } else if (Files.isDirectory(ruta)) { // Caso de que sea una carpeta 
+            System.out.println("El path no correspon a un arxiu, sinó a una carpeta.");
         } else {
-            System.out.println("La ruta es desconocida"); // Comprobar si es correcto 
+            System.out.println("El fitxer no existeix o no és accessible."); // El resto de casos en el que no se encuentre o no exista el fichero 
         }
         
     }
