@@ -19,14 +19,16 @@ public class PR113append {
     }
 
     public static void afegirFrases(String camiFitxer) { // Este metodo escribe sin borrar, agrega
-        try (PrintWriter pw = new PrintWriter(
-            new OutputStreamWriter(new FileOutputStream("fitxer.txt"), StandardCharsets.UTF_8))) {
-            pw.println("Primera línia");   // println() afegeix el salt de línia
-            pw.println("Segona línia");
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(camiFitxer, StandardCharsets.UTF_8, true))) { // El ultimo parametro es para determinar si agregamos texto o sobreescribimos (true o false)
+            bw.write("I can only show you the door");
+            bw.newLine(); //Salto de linea 
+            bw.write("You're the one that has to walk through it");
+            bw.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        //Comprobando una cosa 
+
+        
     }
 }
