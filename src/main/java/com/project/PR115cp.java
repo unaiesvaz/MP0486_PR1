@@ -34,12 +34,11 @@ public class PR115cp {
             try {
                 if (Files.exists(dir_desti)) { // Si el archivo de destino ya existe, damos advertencia de que el archivo sera sobreescrito
                     System.out.println("El archivo sera sobreescrito!");
-                    String contenido_origen = Files.readString(dir_origen); //Para copiar el contenido de un fichero en otro
-                    Files.writeString(dir_desti, contenido_origen, StandardCharsets.UTF_8);
-                } else {
-                    String contenido_origen = Files.readString(dir_origen);
-                    Files.writeString(dir_desti, contenido_origen, StandardCharsets.UTF_8);
                 }
+                String contenido_origen = Files.readString(dir_origen, StandardCharsets.UTF_8); //Para copiar el contenido de un fichero en otro
+                Files.writeString(dir_desti, contenido_origen, StandardCharsets.UTF_8);
+                System.out.println("El archivo se ha copiado con éxito!");
+
             } catch (IOException e) {
                 System.out.println("Ha habido un problema al copiar el fichero");
             } 
